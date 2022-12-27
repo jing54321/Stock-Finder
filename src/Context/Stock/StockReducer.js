@@ -1,4 +1,4 @@
-import { SEARCH_STOCKS, GET_STOCK, CLEAR_STOCKS } from "../types";
+import { SEARCH_STOCKS, GET_PROFILE, CLEAR_STOCKS } from "../types";
 
 const StockReducer = (state,action) => {
     switch(action.type) {
@@ -7,10 +7,10 @@ const StockReducer = (state,action) => {
                 ...state,
                 stocks:action.payload
             }
-        case GET_STOCK:
+        case GET_PROFILE:
             return {
                 ...state,
-                stock:action.payload
+                profile:action.payload
             }
         case CLEAR_STOCKS:
             return {

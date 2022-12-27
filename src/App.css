@@ -347,7 +347,8 @@ table td {
 }
 
 table th {
-  background: var(--light-color);
+  /* background: var(--light-color); */
+  background-color: rgb(221, 216, 216);
 }
 
 /* Navbar */

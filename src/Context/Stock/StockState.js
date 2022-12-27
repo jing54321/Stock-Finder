@@ -6,7 +6,7 @@ import { SEARCH_STOCKS, CLEAR_STOCKS } from "../types";
 const StockState = props => {
     const initialState = {
         stocks : [],
-        stock : {}
+        profile : {}
     }
 
     const [state, dispatch] = useReducer(StockReducer,initialState);
@@ -32,7 +32,7 @@ const StockState = props => {
 
     return <StockContext.Provider value={{
         stocks:state.stocks,
-        stock:state.stock,
+        stock:state.profile,
         searchStocks,
         clearUser
     }}>

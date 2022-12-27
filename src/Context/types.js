@@ -1,5 +1,5 @@
 export const SEARCH_STOCKS = 'SEARCH_STOCKS';
-export const GET_STOCK = 'GET_STOCK';
+export const GET_PROFILE = 'GET_PROFILE';
 export const CLEAR_STOCKS = 'CLEAR_STOCKS';
 export const GET_REPOS = 'GET_REPOS';
 export const SET_LOADING = 'SET_LOADING';
