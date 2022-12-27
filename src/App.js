@@ -1,8 +1,9 @@
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import Search from './Components/Stocks/Search';
-import Stocks from './Components/Stocks/Stocks';
+import Home from './Components/Pages/Home';
+import StockProfile from './Components/Stocks/StockProfile';
 import NavBar from './Components/Layout/NavBar';
+import About from './Components/Pages/About';
 import StockStates from './Context/Stock/StockState';
 
 function App() {
@@ -13,13 +14,14 @@ function App() {
         <NavBar/>
         <div className="container">
           <Routes>
-            <Route path='/' element={<><Search/><Stocks/></>}/>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/about' element={<About/>}/>
+            <Route path='/stocks/:ticker' element={<StockProfile/>}/>
           </Routes>
         </div>
       </div>
     </Router>
     </StockStates>
-    
   );
 }
 

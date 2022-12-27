@@ -1,11 +1,13 @@
 import React , {useContext, Fragment} from 'react';
 import StockContext from '../../Context/Stock/StockContext';
 import StockItem from './StockItem';
+import Spinner from '../Layout/Spinner';
 
 const Stocks = () => {
 
   const stockContext = useContext(StockContext);
-  const {stocks} = stockContext;
+  const {stocks, loading} = stockContext;
+  if(loading) return <Spinner/>;
   const newStocks = stocks.filter(stock => stock.symbol.indexOf('.') === -1);
   if(newStocks.length===0) return <Fragment><div></div></Fragment>;
   return (
