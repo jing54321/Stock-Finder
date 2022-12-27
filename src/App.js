@@ -5,6 +5,7 @@ import StockProfile from './Components/Stocks/StockProfile';
 import NavBar from './Components/Layout/NavBar';
 import About from './Components/Pages/About';
 import StockStates from './Context/Stock/StockState';
+import News from './Components/News/News';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/about' element={<About/>}/>
-            <Route path='/stocks/:ticker' element={<StockProfile/>}/>
+            <Route path='/stocks/:ticker' element={<><StockProfile/><News/></>}/>
           </Routes>
         </div>
       </div>

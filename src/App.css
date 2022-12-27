@@ -34,6 +34,19 @@ a:hover {
 
 ul {
   list-style: none;
+  transition:scale 2s;
+}
+
+ul.news li {
+  transition:all 0.2s;
+}
+
+ul.news li:hover {
+  transform: scale(1.01);
+}
+
+ul.news li h4 a:hover {
+  color : 'blue';
 }
 
 img {

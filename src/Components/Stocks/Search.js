@@ -4,7 +4,7 @@ import StockContext from '../../Context/Stock/StockContext';
 const Search = () => {
 
     const stockContext = useContext(StockContext);
-    const {searchStocks, stocks, clearUser} = stockContext;
+    const {searchStocks, stocks, clearStocks} = stockContext;
     const [text, setText] = useState('');
 
     const onsubmit = e => {
@@ -20,7 +20,7 @@ const Search = () => {
             <input type="text" name="text" placeholder="Enter tickers...." onChange={onchange} value={text}/>
             <input type="submit" name="search" value="Search" className='btn btn-dark btn-block' />
         </form>
-        {stocks.length > 0 && <button className="btn btn-light btn-block my-1" onClick={clearUser}>Clear</button>}
+        {stocks.length > 0 && <button className="btn btn-light btn-block my-1" onClick={clearStocks}>Clear</button>}
         </Fragment>
     )
 }
