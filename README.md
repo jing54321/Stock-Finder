@@ -1,5 +1,6 @@
-# This App made by React is for finding profile, news and earnings information of stock that you want.
+# Stock News Finder App
 
+This App made by React is for finding profile, news and earnings information of stock that you want.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
