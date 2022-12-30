@@ -2,6 +2,13 @@ import React, {useReducer} from 'react';
 import {CLEAR_EARNING, GET_EARNINGS, SET_LOADING} from '../types';
 import EarningsReducer from './EarningsReducer';
 import EarningContext from './EarningContext';
+let finnhub_api_key;
+        
+if(process.env.Node_ENV !== 'production') {
+    finnhub_api_key = process.env.REACT_APP_FINNHUB_API_KEY;
+} else {
+    finnhub_api_key = process.env.FINNHUB_API_KEY;  
+}
 
 const EarningState = props => {
     const initialState = {
@@ -11,19 +18,11 @@ const EarningState = props => {
 
     const [state, dispatch] = useReducer(EarningsReducer,initialState);
 
-    let api_key;
-        
-        if(process.env.Node_ENV !== 'production') {
-            api_key = process.env.REACT_APP_API_KEY;
-        } else {
-            api_key = process.env.API_KEY;  
-        }
 
     const getEarning = (ticker,year,quarter) => {
         setLoading();
         let start;
         let end;
-        console.log(year,quarter)
         switch(quarter) {
             case '1':
                 start='01-01';
@@ -49,7 +48,7 @@ const EarningState = props => {
                 break;
         }
 
-        let url = `https://finnhub.io/api/v1/calendar/earnings?from=${year}-${start}&to=${year}-${end}&symbol=${ticker}&token=${api_key}`;
+        let url = `https://finnhub.io/api/v1/calendar/earnings?from=${year}-${start}&to=${year}-${end}&symbol=${ticker}&token=${finnhub_api_key}`;
         fetch(url,{
             method:'GET',
             headers: {"Content-Type":"application/x-www-form-urlencoded"}

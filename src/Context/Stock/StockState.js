@@ -2,30 +2,30 @@ import StockContext from "./StockContext";
 import StockReducer from "./StockReducer";
 import { useReducer } from "react";
 import { SEARCH_STOCKS, CLEAR_STOCKS, GET_PROFILE, SET_LOADING , GET_COMPANY_NEWS, CLEAR_PROFILE} from "../types";
-
-    const StockState = props => {
-        const initialState = {
-            stocks : [],
-            profile : {},
-            loading : false,
-            companyNews : [],
-            //result : null
-        }
-    
-        let api_key;
+let finnhub_api_key;
         
-        if(process.env.Node_ENV !== 'production') {
-            api_key = process.env.REACT_APP_API_KEY;
-        } else {
-            api_key = process.env.API_KEY;  
-        }
+if(process.env.Node_ENV !== 'production') {
+    finnhub_api_key = process.env.REACT_APP_FINNHUB_API_KEY;
+} else {
+    finnhub_api_key = process.env.FINNHUB_API_KEY;  
+}
+
+const StockState = props => {
+    const initialState = {
+        stocks : [],
+        profile : {},
+        loading : false,
+        companyNews : [],
+        //result : null
+    }
+    
 
     const [state, dispatch] = useReducer(StockReducer,initialState);
 
     // Get Stock List
     const searchStocks = text => {
         setLoading();
-        const url = `https://finnhub.io/api/v1/search?q=${text}&token=${api_key}`;
+        const url = `https://finnhub.io/api/v1/search?q=${text}&token=${finnhub_api_key}`;
 
         fetch(url,{
             method:'GET',
@@ -41,7 +41,7 @@ import { SEARCH_STOCKS, CLEAR_STOCKS, GET_PROFILE, SET_LOADING , GET_COMPANY_NEW
     //Get one stock's profile
     const getProfile = ticker => {
         setLoading();
-        const url = `https://finnhub.io/api/v1/stock/profile2?symbol=${ticker}&token=${api_key}`;
+        const url = `https://finnhub.io/api/v1/stock/profile2?symbol=${ticker}&token=${finnhub_api_key}`;
 
         fetch(url,{
             method:'GET',
@@ -62,7 +62,7 @@ import { SEARCH_STOCKS, CLEAR_STOCKS, GET_PROFILE, SET_LOADING , GET_COMPANY_NEW
         const sevenDaysAgo = new Date(today.setDate(today.getDate()-2));
         const start = `${sevenDaysAgo.getFullYear()}-${sevenDaysAgo.getMonth()+1}-${sevenDaysAgo.getDate()}`;
 
-        const url = `https://finnhub.io/api/v1/company-news?symbol=${ticker}&from=${start}&to=${end}&token=${api_key}`;
+        const url = `https://finnhub.io/api/v1/company-news?symbol=${ticker}&from=${start}&to=${end}&token=${finnhub_api_key}`;
 
         fetch(url,{
             method:'GET',

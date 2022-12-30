@@ -22,7 +22,7 @@ const Search = () => {
     const onchange = e => setText(e.target.value);
     return (
         <Fragment>
-        <form onSubmit={onsubmit} className="form" autocomplete="off">
+        <form onSubmit={onsubmit} className="form" autoComplete="off">
             <input type="text" name="text" placeholder="Enter tickers...." onChange={onchange} value={text}/>
             <input type="submit" name="search" value="Search" className='btn btn-dark btn-block' />
         </form>

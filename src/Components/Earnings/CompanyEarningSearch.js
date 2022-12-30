@@ -33,7 +33,7 @@ const CompanyEarningSearch = () => {
 
   return (
     <Fragment>
-      <form className="form my-1" onSubmit={onsubmit} autocomplete="off">
+      <form className="form my-1" onSubmit={onsubmit} autoComplete="off">
         <div style={formStyle}>
             <label style={{width:'4rem'}} htmlFor="ticker" >Ticker : </label>
             <input style={{flex: 1, margin:'0'}} id ="ticker" type="text" name="text" placeholder='Enter ticker...' value={ticker} onChange={onchange}/>
