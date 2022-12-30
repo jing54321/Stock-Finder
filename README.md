@@ -1,9 +1,13 @@
 # Stock News Finder App
 
 This App made by React is for finding profile, news and earnings information of stock that you want.
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- API info : [Finnhub](https://finnhub.io/docs/api/)
+- CSS : [Font Awesome](https://fontawesome.com/), App.css from Udemy Traversary lecture.
+- React Hooks : useContext, useReducer, useState, useEffect
+- React-Router-Dom : {BrowserRouter as Router, Routes, Route}, useParams, useNavigate
 
-## Available Scripts
+
+## Demo
 
 In the project directory, you can run:
 
