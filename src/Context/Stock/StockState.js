@@ -8,7 +8,8 @@ const StockState = props => {
         stocks : [],
         profile : {},
         loading : false,
-        companyNews : []
+        companyNews : [],
+        //result : null
     }
 
     const [state, dispatch] = useReducer(StockReducer,initialState);
@@ -25,7 +26,9 @@ const StockState = props => {
         .then(res => res.text())
         .then(res => {
             let arr = JSON.parse(res).result;
-            arr = arr.map((a,index) => {return { 'id':index,...a}});
+            arr = arr.map((a,index) => {return { 'id':index,...a}}).filter(stock => stock.symbol.indexOf('.') === -1);
+            //let message = arr.length>1? `${arr.length} results found.`:`${arr.length} result found.`;
+            //showResult(message,'success');
             dispatch({type:SEARCH_STOCKS, payload:arr})
         })
     }
@@ -65,23 +68,33 @@ const StockState = props => {
             dispatch({type:GET_COMPANY_NEWS, payload:arr})
         })
     }
-
+    /*
+    const showResult = (msg, type) => {
+        dispatch({type:SHOW_RESULT, payload:{msg,type}})
+        setTimeout(() =>{removeResult()},3000)
+    }
+   */
     const clearStocks = () => dispatch({type:CLEAR_STOCKS});
 
     const clearProfile = () => dispatch({type:CLEAR_PROFILE});
 
     const setLoading = () => dispatch({type:SET_LOADING});
 
+    //const removeResult = () => dispatch({type:REMOVE_RESULT});
+
     return <StockContext.Provider value={{
         stocks:state.stocks,
         profile:state.profile,
         loading:state.loading,
         companyNews:state.companyNews,
+        result:state.result,
         searchStocks,
         clearStocks,
         getProfile,
         getCompanyNews,
         clearProfile,
+        //showResult,
+        //removeResult
     }}>
     {props.children}
     </StockContext.Provider>

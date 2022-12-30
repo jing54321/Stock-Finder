@@ -1,4 +1,4 @@
-import { SEARCH_STOCKS, GET_PROFILE, CLEAR_STOCKS, SET_LOADING, GET_COMPANY_NEWS, CLEAR_PROFILE } from "../types";
+import { SEARCH_STOCKS, GET_PROFILE, CLEAR_STOCKS, SET_LOADING, GET_COMPANY_NEWS, CLEAR_PROFILE} from "../types";
 
 const StockReducer = (state,action) => {
     switch(action.type) {
@@ -35,6 +35,7 @@ const StockReducer = (state,action) => {
                 ...state,
                 loading:true
             }
+        
         default:
             return {
                 ...state,

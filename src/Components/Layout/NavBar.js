@@ -9,13 +9,14 @@ const NavBar = ({title}) => {
       </h2>
       <h3>
         <Link to='/'>Home</Link>
+        <Link to='/Earnings'>Earnings</Link>
         <Link to='/About'>About</Link>
       </h3>
     </div>
   )
 }
 NavBar.defaultProps = {
-    title:'Stock Finder'
+    title:'Stock News Finder'
 }
 
 export default NavBar
