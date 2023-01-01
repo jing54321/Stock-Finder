@@ -1,77 +1,26 @@
 # Stock News Finder App
 
 This App made by React is for finding profile, news and earnings information of stock that you want.
+
 - API info : [Finnhub](https://finnhub.io/docs/api/)
 - CSS : [Font Awesome](https://fontawesome.com/), App.css from Udemy Traversary lecture.
 - React Hooks : useContext, useReducer, useState, useEffect
 - React-Router-Dom : {BrowserRouter as Router, Routes, Route}, useParams, useNavigate
-
+- You can use this here https://stock-news-finder.netlify.app/
 
 ## Demo
 
-In the project directory, you can run:
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/75094086/210109209-fbc994a1-20d1-4de7-8f06-d4ef11558e4a.gif)
 
-### `npm start`
+## How to use
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Home : you can search stocks using stock ticker. i.e.) tsla -> tesla\
+  Once you have found a stock which you want, you can click ticker.\
+  Then you can see stock's news and basic info.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Earnings : You have to enter 3 inputs that are ticker, year, quarter.\
+  Then you can see the estimated and actual earnings.
 
-### `npm test`
+- About : Version info
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-# Stock-Finder
+## Stock-News-Finder
