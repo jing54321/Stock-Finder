@@ -58,9 +58,10 @@ const StockState = props => {
 
         setLoading()
         const today = new Date();
-        const end = `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`;
-        const sevenDaysAgo = new Date(today.setDate(today.getDate()-2));
-        const start = `${sevenDaysAgo.getFullYear()}-${sevenDaysAgo.getMonth()+1}-${sevenDaysAgo.getDate()}`;
+        const end = `${today.getFullYear()}-${10-(today.getMonth()+1)>0?'0'+(today.getMonth()+1):(today.getMonth()+1)}-${10-today.getDate()>0?'0'+today.getDate():today.getDate()}`;
+        const twoDaysAgo = new Date(today.setDate(today.getDate()-2));
+        const start = `${twoDaysAgo.getFullYear()}-${10-(twoDaysAgo.getMonth()+1)>0?'0'+(twoDaysAgo.getMonth()+1):(twoDaysAgo.getMonth()+1)}-${10-twoDaysAgo.getDate()>0?'0'+twoDaysAgo.getDate():twoDaysAgo.getDate()}`;
+        console.log(end);
 
         const url = `https://finnhub.io/api/v1/company-news?symbol=${ticker}&from=${start}&to=${end}&token=${finnhub_api_key}`;
 
