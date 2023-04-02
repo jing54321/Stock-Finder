@@ -6,7 +6,7 @@ This App made by React is for finding profile, news and earnings information of 
 - CSS : [Font Awesome](https://fontawesome.com/), App.css from Udemy Traversary lecture.
 - React Hooks : useContext, useReducer, useState, useEffect
 - React-Router-Dom : {BrowserRouter as Router, Routes, Route}, useParams, useNavigate
-
+- If you go to this app, click [here](https://stock-news-finder.netlify.app/)
 
 ## Demo
 
